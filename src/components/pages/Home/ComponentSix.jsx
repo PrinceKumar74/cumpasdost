@@ -30,7 +30,7 @@ const PortfolioCard = ({ tag, title, imageUrl, large = false }) => (
           src={imageUrl}
           alt={title}
           className="w-full h-48 object-cover rounded-md"
-          onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/600x400/27272a/FFF?text=Image'; }}
+          onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/600x400/27272a/FFF?text=Image'; }}
         />
       </div>
     )}

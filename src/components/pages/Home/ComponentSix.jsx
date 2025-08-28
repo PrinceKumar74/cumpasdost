@@ -1,6 +1,7 @@
 import React from 'react';
 import picOne from '../../../assets/homePics/picOne.png'
-import picTwo from '../../../assets/homePics/picTwo.png'
+import picTwo from "../../../assets/homePics/picTwo.png";
+
 
 // A reusable arrow icon component for the "Read more" links
 const ArrowIcon = () => (

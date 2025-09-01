@@ -51,8 +51,8 @@ const ComponentSeven = () => {
                     className="w-16 h-16 rounded-full mr-4 border-2 border-gray-600"
                   />
                   <div>
-                    <h4 className="font-bold text-white">Client Name</h4>
-                    <p className="text-gray-400 text-sm">Designation with Company Name</p>
+                    <h4 className="font-bold text-white">Mr. Gagan deep</h4>
+                    <p className="text-gray-400 text-sm">CEO, hairlyf</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">

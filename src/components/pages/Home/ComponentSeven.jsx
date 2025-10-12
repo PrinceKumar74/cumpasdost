@@ -52,7 +52,7 @@ const ComponentSeven = () => {
                   />
                   <div>
                     <h4 className="font-bold text-white">Gagan Deep</h4>
-                    <p className="text-gray-400 text-sm">Designation with Company Name</p>
+                    <p className="text-gray-400 text-sm">Founder of Hairlyf</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">

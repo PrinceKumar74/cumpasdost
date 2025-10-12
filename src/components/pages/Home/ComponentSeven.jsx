@@ -67,14 +67,14 @@ const ComponentSeven = () => {
             {/* Delivery Success Rate Card */}
             <div className="bg-indigo-400 rounded-2xl p-8 text-gray-900 flex flex-col justify-center h-full">
               <h3 className="text-xl font-semibold mb-2">Delivery Success Rate</h3>
-              <p className="text-7xl font-bold">95%</p>
+              <p className="text-7xl font-bold">98%</p>
             </div>
 
             {/* Repeat Customers Card */}
             <div className="bg-orange-600 rounded-2xl p-8 text-white flex flex-col justify-center h-full">
               <h3 className="text-xl font-semibold mb-2">Repeat Customers</h3>
               <p className="text-gray-200">
-                An impressive 85% of our customers return to us time and time again for their floral needs. Whether it's for special occasions, everyday arrangements.
+                An impressive 99% of our customers return to us time and time again for their floral needs. Whether it's for special occasions, everyday arrangements.
               </p>
             </div>
           </div>

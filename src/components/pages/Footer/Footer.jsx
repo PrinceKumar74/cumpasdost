@@ -1,6 +1,6 @@
 import React from 'react';
 // Assuming lucide-react is installed for these icons
-import { Mail, Phone, Linkedin, Instagram, Twitter, Facebook } from 'lucide-react'; 
+import { Mail, Phone, Linkedin, Instagram, Twitter, Facebook } from 'lucide-react';
 // Assuming react-router-dom is installed for Link
 import { Link } from 'react-router-dom';
 // Restoring the local logo import path
@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-50 py-8 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        
+
         {/* Company Info Section */}
         <div className="col-span-1 lg:col-span-1">
           <div className="flex items-center mb-4">
@@ -18,8 +18,8 @@ const Footer = () => {
             <img
               className="h-12 w-auto mr-2"
               src={logo}
-              alt='logo' 
-              onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/150x50?text=Logo'; }}
+              alt='logo'
+              onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/150x50?text=Logo'; }}
             />
           </div>
           <p className="text-gray-600 text-sm leading-relaxed mb-4">
@@ -47,14 +47,14 @@ const Footer = () => {
         {/* About Links Section */}
         <div className="col-span-1">
           <h3 className="text-orange-600 font-semibold text-lg mb-4">About</h3>
-        <ul className="space-y-2 text-gray-600 text-sm">
-  
-  
-  
-  
-  <li><Link to="/contact" className="hover:text-orange-600 transition-colors">Contact Us</Link></li>
-  <li><Link to="/policies" className="hover:text-orange-600 transition-colors">Privacy Policy</Link></li>
-</ul>
+          <ul className="space-y-2 text-gray-600 text-sm">
+
+
+
+
+            <li><Link to="/contact" className="hover:text-orange-600 transition-colors">Contact Us</Link></li>
+            <li><Link to="/policies" className="hover:text-orange-600 transition-colors">Privacy Policy</Link></li>
+          </ul>
         </div>
 
         {/* Contact & Follow Us Section */}
@@ -67,12 +67,20 @@ const Footer = () => {
           <div className="flex items-center text-gray-600 text-sm mb-6">
             <Mail className="h-4 w-4 mr-2 flex-shrink-0" />
             <span className="break-all">info@CumpasDost.com</span>
-          </div> 
+          </div>
 
           <h3 className="text-orange-600 font-semibold text-lg mb-4">FOLLOW US</h3>
           <div className="flex space-x-3 mb-8">
             <a href="#" className="text-gray-600 hover:text-orange-600 transition-colors p-2 rounded-full border border-gray-300 hover:border-orange-600"><Linkedin className="h-5 w-5" /></a>
-            <a href="#" className="text-gray-600 hover:text-orange-600 transition-colors p-2 rounded-full border border-gray-300 hover:border-orange-600"><Instagram className="h-5 w-5" /></a>
+            <a
+              href="https://www.instagram.com/cumpasdost.private.limited?igsh=Z3VteDc0YXQ5cnI3"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-orange-600 transition-colors p-2 rounded-full border border-gray-300 hover:border-orange-600"
+            >
+              <Instagram className="h-5 w-5" />
+            </a>
+
             <a href="#" className="text-gray-600 hover:text-orange-600 transition-colors p-2 rounded-full border border-gray-300 hover:border-orange-600"><Twitter className="h-5 w-5" /></a>
             <a href="#" className="text-gray-600 hover:text-orange-600 transition-colors p-2 rounded-full border border-gray-300 hover:border-orange-600"><Facebook className="h-5 w-5" /></a>
           </div>

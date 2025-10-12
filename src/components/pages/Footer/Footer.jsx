@@ -26,7 +26,7 @@ const Footer = () => {
             Focused on driving your success and helping you outperform competitors with cutting-edge solutions.
           </p>
           <p className="text-gray-500 text-xs mt-8">
-            Cumpas Dost © 2024. All Rights Reserved
+            Cumpas Dost Pvt Ltd © 2024. All Rights Reserved
           </p>
         </div>
 

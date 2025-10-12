@@ -1,6 +1,7 @@
 import ComponentOne from "./ComponentOne";
 import ComponentTwo from "./ComponentTwo";
 import ComponentThree from "./ComponentThree";
+import ComponentFour from "./ComponentFour";
 const Ai = () => {
     return (
         <div className="w-full  bg-black  " >
@@ -8,6 +9,7 @@ const Ai = () => {
            <ComponentOne />
            <ComponentTwo />
            <ComponentThree />
+           <ComponentFour />
            
            
         </div>

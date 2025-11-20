@@ -133,7 +133,7 @@ function ComponentThree() {
           What we offer?
         </h2>
         <p className="text-gray-400 text-lg mb-12 max-w-3xl mx-auto leading-relaxed">
-          Risus commodo id odio turpis pharetra elementum. Pulvinar porta porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros consequat magna semper orci a tincidunt.
+          We provide a wide range of services to help your business grow and succeed in the digital world.
         </p>
 
         {/* Services Grid */}

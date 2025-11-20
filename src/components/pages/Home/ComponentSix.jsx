@@ -87,7 +87,7 @@ const ComponentSix = () => {
               Some pieces of our work
             </h2>
             <p className="text-gray-400 mb-8 text-lg">
-              Risus commodo id odio turpis pharetra elementum. Pulvinar porta feugiat scelerisque in elit. Morbi rhoncus, tellus, eros consequat magna semper orci a tincidunt.
+              Explore our diverse portfolio showcasing innovative solutions and creative designs that drive success for our clients.
             </p>
             <button className="border border-gray-600 text-white font-semibold py-3 px-6 rounded-full self-start hover:bg-white hover:text-black transition-colors duration-300">
               SHOW MORE

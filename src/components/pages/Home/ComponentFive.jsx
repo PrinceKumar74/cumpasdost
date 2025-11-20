@@ -100,7 +100,7 @@ function ComponentFive() {
         <h2 className="text-4xl sm:text-5xl font-bold mb-12">
           Why Choose Us?
         </h2>
-
+        Alongside being a service provider, Cumpasdost is your committed partner for success, enabling you to outshine your competitors with the latest solutions. Your goals are a priority for us, and for that reason, we consistently evolve as a company. We are dedicated to accomplish everything with excellence so that surpassing expectations becomes the new standard. But it's not just about delivering results; we actually care about your business. Every project to us is not only a task, but a long-term partnership on trust, commitment, and joint success.
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (

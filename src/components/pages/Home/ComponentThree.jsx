@@ -133,7 +133,7 @@ function ComponentThree() {
           What we offer?
         </h2>
         <p className="text-gray-400 text-lg mb-12 max-w-3xl mx-auto leading-relaxed">
-          We provide a wide range of services to help your business grow and succeed in the digital world.
+         At Campusdost, we provide everything your business needs to grow in the digital world. We help you build a strong brand identity that connects with your audience, and we create modern, responsive websites that look great and work smoothly. Our goal is simple — deliver quality, support your vision, and build a long-term partnership based on trust and results.
         </p>
 
         {/* Services Grid */}

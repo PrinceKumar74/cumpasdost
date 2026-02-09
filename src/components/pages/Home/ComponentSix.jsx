@@ -22,7 +22,7 @@ const ArrowIcon = () => (
 
 // A reusable card component for the portfolio items
 const PortfolioCard = ({ tag, title, imageUrl, large = false }) => (
-  <div className={`bg-[#27272a] p-6 rounded-lg flex flex-col ${large ? 'md:col-span-1 md:row-span-2' : ''}`}>
+  <div className={`cd-card p-6 rounded-2xl flex flex-col ${large ? 'md:col-span-1 md:row-span-2' : ''}`}>
     {imageUrl && (
       <div className="mb-4">
         <img
@@ -34,11 +34,11 @@ const PortfolioCard = ({ tag, title, imageUrl, large = false }) => (
       </div>
     )}
     <div className="flex-grow flex flex-col">
-      <span className="text-xs font-semibold bg-yellow-500 text-black px-2 py-1 rounded-md self-start mb-4">
+      <span className="text-xs font-semibold bg-black/5 text-[var(--cd-text)] px-2.5 py-1 rounded-full self-start mb-4 border border-black/5">
         {tag}
       </span>
-      <h3 className="text-white text-2xl font-semibold mb-4 flex-grow">{title}</h3>
-      <a href="#" className="text-gray-400 hover:text-white group font-medium">
+      <h3 className="text-[var(--cd-text)] text-2xl font-semibold mb-4 flex-grow">{title}</h3>
+      <a href="#" className="text-[var(--cd-muted)] hover:text-[var(--cd-text)] group font-medium">
         Read more <ArrowIcon />
       </a>
     </div>
@@ -78,18 +78,18 @@ const ComponentSix = () => {
   ];
 
   return (
-    <div className="bg-[#18181b] min-h-screen p-8 md:p-16 font-sans">
+    <section className="p-8 md:p-16 font-sans">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Left Column: Title and Description */}
           <div className="md:col-span-1 flex flex-col justify-center">
-            <h2 className="text-white text-5xl md:text-6xl font-bold mb-6">
+            <h2 className="text-[var(--cd-text)] text-5xl md:text-6xl font-bold mb-6">
               Some pieces of our work
             </h2>
-            <p className="text-gray-400 mb-8 text-lg">
+            <p className="text-[var(--cd-muted)] mb-8 text-lg">
               Explore our diverse portfolio showcasing innovative solutions and creative designs that drive success for our clients.
             </p>
-            <button className="border border-gray-600 text-white font-semibold py-3 px-6 rounded-full self-start hover:bg-white hover:text-black transition-colors duration-300">
+            <button className="cd-gradient text-white font-semibold py-3 px-6 rounded-full self-start hover:opacity-95 transition-colors duration-300 shadow-lg shadow-indigo-600/15">
               SHOW MORE
             </button>
           </div>
@@ -108,7 +108,7 @@ const ComponentSix = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

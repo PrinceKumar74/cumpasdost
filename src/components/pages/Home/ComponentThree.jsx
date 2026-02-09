@@ -125,14 +125,14 @@ function ComponentThree() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8 font-sans">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-7xl mx-auto text-center">
         {/* Section Header */}
-        <p className="text-orange-500 text-sm font-semibold uppercase tracking-wider mb-2">SERVICES</p>
-        <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+        <p className="cd-gradient-text text-sm font-semibold uppercase tracking-wider mb-2">SERVICES</p>
+        <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-[var(--cd-text)]">
           What we offer?
         </h2>
-        <p className="text-gray-400 text-lg mb-12 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-[var(--cd-muted)] text-lg mb-12 max-w-3xl mx-auto leading-relaxed">
          At Campusdost, we provide everything your business needs to grow in the digital world. We help you build a strong brand identity that connects with your audience, and we create modern, responsive websites that look great and work smoothly. Our goal is simple — deliver quality, support your vision, and build a long-term partnership based on trust and results.
         </p>
 
@@ -141,16 +141,16 @@ function ComponentThree() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-gray-800 p-8 rounded-xl shadow-lg flex flex-col items-start text-left transform transition duration-300 hover:scale-105 hover:bg-gray-700"
+              className="cd-card p-8 flex flex-col items-start text-left transform transition duration-300 hover:-translate-y-1 hover:shadow-2xl"
             >
               <div className="mb-4">{service.icon}</div>
-              <h3 className="text-2xl font-semibold mb-2">{service.title}</h3>
-              <p className="text-gray-400 leading-relaxed">{service.description}</p>
+              <h3 className="text-2xl font-semibold mb-2 text-[var(--cd-text)]">{service.title}</h3>
+              <p className="text-[var(--cd-muted)] leading-relaxed">{service.description}</p>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

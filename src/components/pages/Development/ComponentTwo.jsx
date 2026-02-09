@@ -85,18 +85,18 @@ export default function ComponentTwo() {
   ];
 
   return (
-    <div className="bg-white font-sans py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+    <section className="font-sans py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto text-center">
         
         {/* Header Section */}
         <div className="mb-12">
-          <span className="text-orange-500 border border-orange-500 rounded-md px-3 py-1 text-sm font-semibold tracking-wider">
+          <span className="cd-gradient-text border border-[var(--cd-border)] rounded-full px-4 py-1 text-sm font-semibold tracking-wider cd-surface">
             SERVICES
           </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--cd-text)]">
             What we can do for you
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-500">
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-[var(--cd-muted)]">
             From new digital projects to process optimization and support, we partner with businesses to deliver impactful results.
           </p>
         </div>
@@ -104,23 +104,23 @@ export default function ComponentTwo() {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
           {services.map((service, index) => (
-            <div key={index} className="bg-[#1e1e1e] text-white p-8 rounded-2xl flex flex-col shadow-lg">
+            <div key={index} className="cd-card p-8 rounded-2xl flex flex-col shadow-lg">
               {/* Icon */}
-              <div className="bg-white p-4 rounded-xl self-start mb-6">
-                <service.Icon />
+              <div className="cd-gradient p-4 rounded-xl self-start mb-6 text-white shadow-lg shadow-indigo-600/15">
+                <service.Icon className="text-white" />
               </div>
               
               {/* Card Content */}
-              <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
-              <p className="text-sm font-semibold tracking-widest text-gray-400 mb-4">DEV & SUPPORT</p>
-              <p className="text-gray-300 mb-6 flex-grow">{service.description}</p>
+              <h3 className="text-2xl font-bold mb-2 text-[var(--cd-text)]">{service.title}</h3>
+              <p className="text-sm font-semibold tracking-widest text-[var(--cd-muted)] mb-4">DEV & SUPPORT</p>
+              <p className="text-[var(--cd-muted)] mb-6 flex-grow">{service.description}</p>
               
               {/* Tech Stack */}
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-400">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-[var(--cd-muted)]">
                 {service.tech.map((tech, i) => (
                   <React.Fragment key={i}>
                     <span>{tech}</span>
-                    {i < service.tech.length - 1 && <span className="text-orange-500">&bull;</span>}
+                    {i < service.tech.length - 1 && <span className="cd-gradient-text">&bull;</span>}
                   </React.Fragment>
                 ))}
               </div>
@@ -129,6 +129,6 @@ export default function ComponentTwo() {
         </div>
 
       </div>
-    </div>
+    </section>
   );
 }

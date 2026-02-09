@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 
 
 const Introduction =()=>(
-    <div className="max-w-4xl mx-auto p-6 bg-white">
-    <h1 className="text-3xl font-bold text-gray-800 mb-6">Privacy Policy</h1>
+    <div className="max-w-4xl mx-auto p-6 cd-card">
+    <h1 className="text-3xl font-bold text-[var(--cd-text)] mb-6">Privacy Policy</h1>
 
     <section className="mb-8">
-      <h2 className="text-xl font-semibold text-gray-700 mb-4">Introduction</h2>
-      <p className="text-gray-600 leading-relaxed">
+      <h2 className="text-xl font-semibold text-[var(--cd-text)] mb-4">Introduction</h2>
+      <p className="text-[var(--cd-muted)] leading-relaxed">
         These Terms and Conditions ("Terms") govern the use of the website and services provided by CumpasDost. 
         By accessing or using our website and services, you agree to comply with and be bound by these Terms. 
         If you do not agree with these Terms, please refrain from using our website and services.
@@ -15,10 +15,10 @@ const Introduction =()=>(
     </section>
 
     <section>
-      <h2 className="text-xl font-semibold text-gray-700 mb-4">Contact Us</h2>
-      <p className="text-gray-600 leading-relaxed">
+      <h2 className="text-xl font-semibold text-[var(--cd-text)] mb-4">Contact Us</h2>
+      <p className="text-[var(--cd-muted)] leading-relaxed">
         If you have any questions or concerns about our privacy policy, please contact us at{' '}
-        <a href="mailto:info@cumpasdost.com" className="text-blue-600 hover:underline">
+        <a href="mailto:info@cumpasdost.com" className="cd-gradient-text hover:opacity-80">
           info@cumpasdost.com
         </a>{' '}
         or call us at <strong>+91-9990597240</strong>.
@@ -30,30 +30,30 @@ const Introduction =()=>(
 
 
 const Services = () => (
-  <div className="max-w-4xl mx-auto p-6 bg-white">
-    <h1 className="text-3xl font-bold text-gray-800 mb-6">Services</h1>
+  <div className="max-w-4xl mx-auto p-6 cd-card">
+    <h1 className="text-3xl font-bold text-[var(--cd-text)] mb-6">Services</h1>
 
     <section className="mb-8">
-      <p className="text-gray-600 leading-relaxed mb-4">
+      <p className="text-[var(--cd-muted)] leading-relaxed mb-4">
         CumpasDost offers a comprehensive range of digital marketing services, including but not limited to:
       </p>
-      <ul className="list-disc list-inside space-y-2 text-gray-600 mb-6">
+      <ul className="list-disc list-inside space-y-2 text-[var(--cd-muted)] mb-6">
         <li>Website Development</li>
         <li>Digital Marketing Services</li>
         <li>Advertising Campaigns</li>
         <li>Content Writing & Copywriting</li>
         <li>Designing & Branding</li>
       </ul>
-      <p className="text-gray-600 leading-relaxed">
+      <p className="text-[var(--cd-muted)] leading-relaxed">
         Each service is subject to specific terms outlined in separate agreements, and we tailor our services to meet the unique needs of our clients.
       </p>
     </section>
 
     <section>
-      <h2 className="text-lg font-semibold text-gray-700 mb-2">Contact Us</h2>
-      <p className="text-gray-600 leading-relaxed">
+      <h2 className="text-lg font-semibold text-[var(--cd-text)] mb-2">Contact Us</h2>
+      <p className="text-[var(--cd-muted)] leading-relaxed">
         If you have any questions or concerns about our privacy policy, please contact us at{' '}
-        <a href="mailto:info@cumpasdost.com" className="text-blue-600 hover:underline">
+        <a href="mailto:info@cumpasdost.com" className="cd-gradient-text hover:opacity-80">
           info@cumpasdost.com
         </a>{' '}
         or call us at <strong>+91-9990597240</strong>.
@@ -63,28 +63,28 @@ const Services = () => (
 );
 
 const Responsibilities = () => (
-  <div className="max-w-4xl mx-auto p-6 bg-white">
-    <h1 className="text-3xl font-bold text-gray-800 mb-6">Client Responsibilities</h1>
+  <div className="max-w-4xl mx-auto p-6 cd-card">
+    <h1 className="text-3xl font-bold text-[var(--cd-text)] mb-6">Client Responsibilities</h1>
 
     <section className="mb-8">
-      <p className="text-gray-600 leading-relaxed mb-4">
+      <p className="text-[var(--cd-muted)] leading-relaxed mb-4">
         To ensure the successful execution of services, Clients agree to:
       </p>
-      <ul className="list-disc list-inside space-y-2 text-gray-600 mb-6">
+      <ul className="list-disc list-inside space-y-2 text-[var(--cd-muted)] mb-6">
         <li>Provide accurate and complete information necessary for us to perform our obligations.</li>
         <li>Grant access to platforms, websites, or any required third-party accounts, where applicable.</li>
         <li>Cooperate with us in a timely manner to avoid any delays in project execution.</li>
       </ul>
-      <p className="text-gray-600 leading-relaxed">
+      <p className="text-[var(--cd-muted)] leading-relaxed">
         Failure to provide the required materials or information in a timely manner may result in delays, and we will not be held responsible for such delays.
       </p>
     </section>
 
     <section>
-      <h2 className="text-lg font-semibold text-gray-700 mb-2">Contact Us</h2>
-      <p className="text-gray-600 leading-relaxed">
+      <h2 className="text-lg font-semibold text-[var(--cd-text)] mb-2">Contact Us</h2>
+      <p className="text-[var(--cd-muted)] leading-relaxed">
         If you have any questions or concerns about our privacy policy, please contact us at{' '}
-        <a href="mailto:info@cumpasdost.com" className="text-blue-600 hover:underline">
+        <a href="mailto:info@cumpasdost.com" className="cd-gradient-text hover:opacity-80">
           info@cumpasdost.com
         </a>{' '}
         or call us at <strong>+91-9990597240</strong>.
@@ -94,20 +94,20 @@ const Responsibilities = () => (
 );
 
 const Payment = () => (
-  <div className="max-w-4xl mx-auto p-6 bg-white">
-    <h1 className="text-3xl font-bold text-gray-800 mb-6">Payment Terms</h1>
+  <div className="max-w-4xl mx-auto p-6 cd-card">
+    <h1 className="text-3xl font-bold text-[var(--cd-text)] mb-6">Payment Terms</h1>
 
     <section className="mb-8">
-      <p className="text-gray-600 leading-relaxed">
+      <p className="text-[var(--cd-muted)] leading-relaxed">
         All payments for services rendered by CumpasDost are due according to the terms outlined in the individual service agreement or invoice. Payments must be made in full or as agreed, and failure to make timely payments may result in a suspension of services. Prices are subject to change, and you will be notified in advance of any price adjustments.
       </p>
     </section>
 
     <section>
-      <h2 className="text-lg font-semibold text-gray-700 mb-2">Contact Us</h2>
-      <p className="text-gray-600 leading-relaxed">
+      <h2 className="text-lg font-semibold text-[var(--cd-text)] mb-2">Contact Us</h2>
+      <p className="text-[var(--cd-muted)] leading-relaxed">
         If you have any questions or concerns about our privacy policy, please contact us at{' '}
-        <a href="mailto:info@cumpasdost.com" className="text-blue-600 hover:underline">
+        <a href="mailto:info@cumpasdost.com" className="cd-gradient-text hover:opacity-80">
           info@cumpasdost.com
         </a>{' '}
         or call us at <strong>+91-9990597240</strong>.

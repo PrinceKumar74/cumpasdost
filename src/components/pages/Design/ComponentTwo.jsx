@@ -49,29 +49,29 @@ const servicesData = [
 
 export default function ComponentTwo() {
   return (
-    <div className="bg-[#212121] text-white font-sans">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <section className="font-sans">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         
         {/* --- Hero Section --- */}
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4 text-[var(--cd-text)]">
             Let us Shape Your Story.
           </h1>
-          <p className="text-lg text-gray-300 mb-8">
+          <p className="text-lg text-[var(--cd-muted)] mb-8">
             Get started with our free-of-charge, personalized support. Create your custom design plan with us.
           </p>
-          <button className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+          <button className="cd-gradient hover:opacity-95 text-white font-bold py-3 px-8 rounded-lg transition duration-300 shadow-lg shadow-indigo-600/15">
             Primary Action
           </button>
         </div>
 
         {/* --- Services Introduction --- */}
         <div className="text-center max-w-4xl mx-auto mt-20 mb-12">
-            <span className="text-xs font-semibold bg-gray-700/50 text-white py-1 px-3 rounded-full inline-flex items-center mb-4">
+            <span className="text-xs font-semibold cd-surface text-[var(--cd-muted)] py-1 px-3 rounded-full inline-flex items-center mb-4">
                DIGITAL EXPERIENCE
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold">
-                <span className="text-orange-500">Elevate</span> your digital presence with engaging, user focused designs that drive interaction.
+            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--cd-text)]">
+                <span className="cd-gradient-text">Elevate</span> your digital presence with engaging, user focused designs that drive interaction.
             </h2>
         </div>
 
@@ -80,7 +80,7 @@ export default function ComponentTwo() {
           {servicesData.map((service, index) => (
             <div 
               key={index}
-              className="bg-white text-gray-800 rounded-2xl shadow-xl overflow-hidden"
+              className="cd-card overflow-hidden"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 items-center">
                 {/* Image Section */}
@@ -95,8 +95,8 @@ export default function ComponentTwo() {
 
                 {/* Text Content Section */}
                 <div className="p-8 md:p-12">
-                  <h3 className="text-2xl font-bold text-orange-600 mb-3">{service.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                  <h3 className="text-2xl font-bold mb-3 cd-gradient-text">{service.title}</h3>
+                  <p className="text-[var(--cd-muted)] leading-relaxed">{service.description}</p>
                 </div>
               </div>
             </div>
@@ -104,6 +104,6 @@ export default function ComponentTwo() {
         </div>
 
       </div>
-    </div>
+    </section>
   );
 }

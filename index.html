@@ -7,13 +7,42 @@
   <!-- Google Site Verification -->
   <meta name="google-site-verification" content="BVJGKsWO5r-eUYsd812J6d8" />
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CKRJQYXE5Q"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LP2903P1TR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-    gtag('config', 'G-CKRJQYXE5Q');
+    // GA4 (single measurement ID)
+    gtag("config", "G-LP2903P1TR", {
+      page_path: window.location.pathname,
+    });
+
+    /* GA4 EVENTS */
+    function trackCTA() {
+      gtag("event", "cta_click", {
+        event_category: "engagement",
+      });
+    }
+
+    function trackForm() {
+      gtag("event", "form_submit", {
+        event_category: "lead",
+      });
+    }
+
+    /* Scroll 50% */
+    let scrollTracked = false;
+    window.addEventListener("scroll", () => {
+      if (!scrollTracked && window.scrollY > document.body.scrollHeight * 0.5) {
+        gtag("event", "scroll_50", {
+          event_category: "engagement",
+        });
+        scrollTracked = true;
+      }
+    });
   </script>
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="/icon.png" />
@@ -41,45 +70,6 @@
   <meta name="twitter:title" content="Campus Dost | We Make Brand Viral" />
   <meta name="twitter:description" content="Web Design, Development & Digital Marketing Agency" />
   <meta name="twitter:image" content="/icon.png" />
-
-  <!-- ================= GA4 ================= -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1WJFQPHZDG"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-1WJFQPHZDG", {
-      page_path: window.location.pathname,
-    });
-
-    /* GA4 EVENTS */
-    function trackCTA() {
-      gtag("event", "cta_click", {
-        event_category: "engagement",
-      });
-    }
-
-    function trackForm() {
-      gtag("event", "form_submit", {
-        event_category: "lead",
-      });
-    }
-
-    /* Scroll 50% */
-    let scrollTracked = false;
-    window.addEventListener("scroll", () => {
-      if (!scrollTracked &&
-        window.scrollY > document.body.scrollHeight * 0.5
-      ) {
-        gtag("event", "scroll_50", {
-          event_category: "engagement",
-        });
-        scrollTracked = true;
-      }
-    });
-  </script>
 
   <!-- ================= META PIXEL ================= -->
   <script>

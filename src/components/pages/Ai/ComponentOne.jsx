@@ -1,11 +1,10 @@
 import React from 'react';
 
-// Main App component that renders the single, improved component
-export default function App() {
+export default function ComponentOne() {
   return (
-    <div className="bg-slate-900 font-sans p-4 sm:p-6 md:p-8 flex items-center justify-center min-h-screen">
+    <section className="font-sans py-16 px-4 sm:px-6 lg:px-8">
       <AIIntroduction />
-    </div>
+    </section>
   );
 }
 
@@ -14,30 +13,30 @@ export default function App() {
 // Helper component for list items with custom icons
 const FeatureListItem = ({ icon, title, children }) => (
   <li className="flex items-start">
-    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center mr-4 mt-1 border border-slate-600">
+    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-black/5 flex items-center justify-center mr-4 mt-1 border border-black/10">
       {icon}
     </div>
-    <span className="text-gray-300">
-      <strong className="text-white">{title}:</strong> {children}
+    <span className="text-[var(--cd-muted)]">
+      <strong className="text-[var(--cd-text)]">{title}:</strong> {children}
     </span>
   </li>
 );
 
 function AIIntroduction() {
   return (
-    <div className="bg-slate-800/50 rounded-3xl shadow-2xl overflow-hidden border border-white/10 backdrop-blur-md max-w-7xl mx-auto">
+    <div className="cd-card rounded-3xl overflow-hidden max-w-7xl mx-auto">
       <div className="grid md:grid-cols-2 gap-0">
         {/* Text Content Side */}
         <div className="p-8 md:p-12 flex flex-col justify-center">
-          <div className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 w-fit shadow-lg">
+          <div className="inline-block cd-surface px-4 py-2 rounded-full text-sm font-semibold mb-6 w-fit shadow-sm cd-gradient-text">
             THE GENESIS
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            The Dawn of <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Intelligence</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-[var(--cd-text)] mb-6 leading-tight">
+            The Dawn of <span className="cd-gradient-text">Intelligence</span>
           </h1>
           
-          <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+          <p className="text-[var(--cd-muted)] text-lg mb-8 leading-relaxed">
             Artificial Intelligence is the art and science of creating systems that can learn, reason, and create. It's not just about simulating human thought; it's about extending the reach of our own creativity and problem-solving abilities.
           </p>
 
@@ -64,20 +63,20 @@ function AIIntroduction() {
             </ul>
           </div>
 
-          <button className="group relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-purple-500/50 transform hover:scale-105 transition-all duration-300 w-full sm:w-auto overflow-hidden">
-             <span className="relative z-10">Discover the Possibilities</span>
-             <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+          <button className="group relative cd-gradient text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-indigo-600/15 transform hover:scale-105 transition-all duration-300 w-full sm:w-auto overflow-hidden hover:opacity-95">
+            <span className="relative z-10">Discover the Possibilities</span>
           </button>
         </div>
 
         {/* Image Side */}
-        <div className="bg-slate-900/50 p-8 md:p-12 flex items-center justify-center min-h-[400px] md:min-h-0 relative overflow-hidden">
+        <div className="p-8 md:p-12 flex items-center justify-center min-h-[400px] md:min-h-0 relative overflow-hidden">
            {/* Grid Pattern in Background */}
-           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)`, backgroundSize: '30px 30px' }}></div>
+           <div className="absolute inset-0 opacity-15 cd-gradient blur-3xl"></div>
+           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `linear-gradient(rgba(15,23,42,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.12) 1px, transparent 1px)`, backgroundSize: '30px 30px' }}></div>
            
            <div className="relative w-full max-w-sm">
             {/* Animated AI Core Illustration */}
-            <svg viewBox="0 0 400 400" className="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 400 400" className="w-full h-auto cd-rotate360" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <filter id="glow">
                   <feGaussianBlur stdDeviation="3.5" result="coloredBlur" />

@@ -4,7 +4,7 @@ import ComponentThree from "./ComponentThree";
 import ComponentFour from "./ComponentFour";
 const Ai = () => {
     return (
-        <div className="w-full  bg-black  " >
+        <div className="w-full bg-[var(--cd-bg)] text-[var(--cd-text)]" >
             
            <ComponentOne />
            <ComponentTwo />

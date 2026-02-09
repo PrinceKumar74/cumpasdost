@@ -49,13 +49,13 @@ const OurValues = () => {
   ];
 
   return (
-    <div className="w-full py-16 px-4 bg-white">
+    <section className="w-full py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* Left Image */}
-          <div className="order-2 lg:order-1">
-            <div className="relative overflow-hidden rounded-3xl bg-gray-100 aspect-[4/5]">
+          <div className="order-2 lg:order-1 relative">
+            <div className="relative overflow-hidden rounded-3xl bg-gray-100 aspect-[4/5] border border-black/5 shadow-2xl">
               {/* Placeholder for the team hands image */}
               
              <img 
@@ -68,25 +68,25 @@ const OurValues = () => {
             </div>
             
             {/* Decorative elements */}
-            <div className="absolute -top-4 -left-4 w-6 h-6 bg-orange-400 rounded-full opacity-30"></div>
-            <div className="absolute -bottom-6 -right-6 w-8 h-8 bg-amber-400 rounded-full opacity-30"></div>
+            <div className="pointer-events-none absolute -top-4 -left-4 w-6 h-6 rounded-full opacity-30 cd-gradient"></div>
+            <div className="pointer-events-none absolute -bottom-6 -right-6 w-8 h-8 rounded-full opacity-30 bg-[linear-gradient(90deg,var(--cd-accent3),var(--cd-accent2))]"></div>
           </div>
           
           {/* Right Content */}
           <div className="order-1 lg:order-2 space-y-8">
             {/* Badge */}
             <div className="inline-block">
-              <span className="px-4 py-2 text-sm font-medium text-orange-700 bg-orange-50 border border-orange-200 rounded-full uppercase tracking-wider">
+              <span className="px-4 py-2 text-sm font-medium cd-surface rounded-full uppercase tracking-wider cd-gradient-text">
                 Our Values
               </span>
             </div>
             
             {/* Heading */}
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--cd-text)] leading-tight">
                 The Values that Drive Everything We Do
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="text-[var(--cd-muted)] text-lg leading-relaxed">
                 We love what we do and have a lot of fun at work, but we're also deeply committed to our work.
               </p>
             </div>
@@ -94,19 +94,19 @@ const OurValues = () => {
             {/* Values Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {values.map((value, index) => (
-                <div key={index} className="space-y-3">
+                <div key={index} className="space-y-3 cd-card p-5">
                   {/* Icon */}
                   <div className="flex items-start">
                     {value.icon}
                   </div>
                   
                   {/* Title */}
-                  <h3 className="text-xl font-semibold text-gray-900">
+                  <h3 className="text-xl font-semibold text-[var(--cd-text)]">
                     {value.title}
                   </h3>
                   
                   {/* Description */}
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-[var(--cd-muted)] text-sm leading-relaxed">
                     {value.description}
                   </p>
                 </div>
@@ -116,7 +116,7 @@ const OurValues = () => {
           
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

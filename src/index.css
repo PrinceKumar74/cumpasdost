@@ -1,1 +1,129 @@
-@import "tailwindcss" ;
+@import "tailwindcss";
+
+:root {
+  --cd-bg: #f6f6f7;
+  --cd-surface: rgba(255, 255, 255, 0.72);
+  --cd-card: #ffffff;
+  --cd-text: #0f172a;
+  --cd-muted: #475569;
+  --cd-border: rgba(15, 23, 42, 0.14);
+  --cd-accent: #4f46e5; /* indigo */
+  --cd-accent2: #d946ef; /* fuchsia */
+  --cd-accent3: #06b6d4; /* cyan */
+  --cd-ring: rgba(79, 70, 229, 0.22);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background: var(--cd-bg);
+  color: var(--cd-text);
+}
+
+.cd-page {
+  background: var(--cd-bg);
+  color: var(--cd-text);
+}
+
+.cd-surface {
+  background: var(--cd-surface);
+  border: 1px solid var(--cd-border);
+  backdrop-filter: blur(12px);
+}
+
+.cd-card {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--cd-border);
+  border-radius: 16px;
+  box-shadow:
+    0 24px 48px rgba(15, 23, 42, 0.08),
+    0 6px 16px rgba(15, 23, 42, 0.06);
+}
+
+.cd-input {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--cd-border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  outline: none;
+  transition: box-shadow 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.cd-input::placeholder {
+  color: color-mix(in srgb, var(--cd-muted) 70%, transparent);
+}
+
+.cd-input:focus {
+  border-color: color-mix(in srgb, var(--cd-accent) 55%, transparent);
+  box-shadow: 0 0 0 6px var(--cd-ring);
+  background: #ffffff;
+}
+
+.cd-gradient {
+  background-image: linear-gradient(90deg, var(--cd-accent), var(--cd-accent2));
+}
+
+.cd-gradient-text {
+  background-image: linear-gradient(90deg, var(--cd-accent), var(--cd-accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes cd-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.cd-float {
+  animation: cd-float 7s ease-in-out infinite;
+}
+
+@keyframes cd-marquee {
+  0% {
+    transform: translateX(calc(-1 * var(--cd-track-w)));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.cd-card-track {
+  animation: cd-marquee 14s linear infinite;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes cd-rotate360 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cd-rotate360 {
+  animation: cd-rotate360 18s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cd-float,
+  .cd-card-track,
+  .cd-rotate360 {
+    animation: none !important;
+  }
+}

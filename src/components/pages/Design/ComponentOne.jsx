@@ -20,21 +20,21 @@ const CheckIcon = () => (
 
 export default function ComponentOne() {
   return (
-    <div className="bg-[#1e1e1e] min-h-screen w-full flex items-center justify-center font-sans p-4 sm:p-8">
-      <div className="max-w-7xl w-full text-white">
+    <section className="w-full flex items-center justify-center font-sans p-4 sm:p-8 py-16">
+      <div className="max-w-7xl w-full">
         {/* Header Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-8 md:mb-12">
           <div className="space-y-6">
-            <span className="text-xs font-semibold bg-gray-700/50 text-white py-1 px-3 rounded-full inline-flex items-center">
+            <span className="text-xs font-semibold cd-surface text-[var(--cd-muted)] py-1 px-3 rounded-full inline-flex items-center">
                BEST SERVICES
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[var(--cd-text)]">
               Empower Your Business <br /> with{' '}
-              <span className="text-orange-500">Innovative Designs</span>
+              <span className="cd-gradient-text">Innovative Designs</span>
             </h1>
           </div>
           <div className="lg:pl-8">
-            <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
+            <p className="text-[var(--cd-muted)] text-base sm:text-lg leading-relaxed">
               Get complete custom tailored design that brings your ideas to life and help you reach to the customer eyes. We make designs which are eye catching, innovative and always fresh.
             </p>
           </div>
@@ -43,7 +43,7 @@ export default function ComponentOne() {
         {/* Image Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {/* Left Image: Swatches */}
-          <div className="bg-[#2d2d2d] p-4 rounded-xl shadow-lg">
+          <div className="cd-card p-4 rounded-xl shadow-lg">
             <img
               src= {img1}
               alt="Fabric and wood color swatches"
@@ -53,8 +53,8 @@ export default function ComponentOne() {
           </div>
 
           {/* Right Image: Computer Setup */}
-          <div className="bg-[#2d2d2d] p-4 rounded-xl shadow-lg relative overflow-hidden">
-             <div className="absolute inset-0 bg-fuchsia-600/30 blur-3xl z-0"></div>
+          <div className="cd-card p-4 rounded-xl shadow-lg relative overflow-hidden">
+             <div className="absolute inset-0 cd-gradient blur-3xl z-0 opacity-20"></div>
             <img
               src= {img2}
               alt="Desktop computer with design portfolio on screen"
@@ -64,6 +64,6 @@ export default function ComponentOne() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

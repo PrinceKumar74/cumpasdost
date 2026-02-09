@@ -7,7 +7,7 @@ import LetHelp from "./LetHelp";
 
 const About = () => {
     return (
-        <div className="w-full  bg-black  " >
+        <div className="w-full bg-[var(--cd-bg)] text-[var(--cd-text)]" >
             
            <ComponentOne />
            <ComponentTwo />

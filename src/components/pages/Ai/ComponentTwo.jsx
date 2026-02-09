@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-// Main App component that renders everything
-export default function App() {
+export default function ComponentTwo() {
   return (
-    <div className="min-h-screen bg-slate-900 flex items-center justify-center font-sans p-4">
+    <section className="font-sans py-16 px-4 sm:px-6 lg:px-8">
       <AIServicesShowcase />
-    </div>
+    </section>
   );
 }
 
@@ -79,7 +78,7 @@ const ServiceCard = ({ icon, title, description }) => {
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="group relative bg-slate-800/50 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:border-purple-400/50 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer overflow-hidden"
+      className="group relative cd-card p-6 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer overflow-hidden"
     >
       {/* Interactive Glow Effect */}
       <div
@@ -91,19 +90,19 @@ const ServiceCard = ({ icon, title, description }) => {
       ></div>
       
       <div className="relative z-10">
-        <div className="bg-gradient-to-br from-blue-500 to-purple-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6 text-white transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 shadow-lg">
+        <div className="cd-gradient w-16 h-16 rounded-xl flex items-center justify-center mb-6 text-white transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 shadow-lg shadow-indigo-600/15">
           {icon}
         </div>
         
-        <h3 className="text-xl font-bold text-white mb-3 transition-colors duration-300">
+        <h3 className="text-xl font-bold text-[var(--cd-text)] mb-3 transition-colors duration-300">
           {title}
         </h3>
         
-        <p className="text-gray-400 text-sm leading-relaxed">
+        <p className="text-[var(--cd-muted)] text-sm leading-relaxed">
           {description}
         </p>
         
-        <div className="mt-4 flex items-center text-purple-400 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="mt-4 flex items-center cd-gradient-text text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           Explore
           <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -118,7 +117,7 @@ const ServiceCard = ({ icon, title, description }) => {
 // The main component for the AI Services section
 function AIServicesShowcase() {
   return (
-    <div className="relative w-full bg-gradient-to-br from-slate-900 via-purple-900/40 to-slate-900 py-20 px-6 overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
+    <div className="relative w-full cd-card py-20 px-6 overflow-hidden rounded-3xl">
       {/* Abstract Background Elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/50 rounded-full blur-3xl animate-pulse"></div>
@@ -134,15 +133,15 @@ function AIServicesShowcase() {
       <div className="relative max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <div className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-bold mb-6 shadow-lg">
-            🚀 The Future of Creation
+          <div className="inline-block cd-surface px-6 py-2 rounded-full text-sm font-bold mb-6 shadow-sm cd-gradient-text">
+            The Future of Creation
           </div>
           
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Our AI <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Ecosystem</span>
+          <h2 className="text-5xl md:text-6xl font-bold text-[var(--cd-text)] mb-6 leading-tight">
+            Our AI <span className="cd-gradient-text">Ecosystem</span>
           </h2>
           
-          <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-[var(--cd-muted)] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             Harness the power of our next-generation AI platform to create, innovate, and automate at the speed of thought. 
           </p>
         </div>
@@ -161,11 +160,13 @@ function AIServicesShowcase() {
 
         {/* CTA Section */}
         <div className="text-center mt-20">
-          <div className="bg-slate-800/50 backdrop-blur-lg border border-white/10 rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold text-white mb-4">
+          <div className="cd-card rounded-2xl p-8 md:p-12 max-w-4xl mx-auto relative overflow-hidden">
+            <div className="absolute inset-0 opacity-10 cd-gradient"></div>
+            <div className="relative">
+            <h3 className="text-3xl font-bold text-[var(--cd-text)] mb-4">
               Ready to Pioneer the Future?
             </h3>
-            <p className="text-gray-300 mb-8 max-w-xl mx-auto">
+            <p className="text-[var(--cd-muted)] mb-8 max-w-xl mx-auto">
               Join our exclusive waitlist for early access to the platform and help shape the next wave of AI innovation.
             </p>
             
@@ -173,16 +174,17 @@ function AIServicesShowcase() {
               <input 
                 type="email" 
                 placeholder="Enter your email" 
-                className="w-full sm:w-auto bg-white/10 border-2 border-white/20 text-white px-6 py-3 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300 text-center sm:text-left"
+                className="w-full sm:w-auto cd-input text-center sm:text-left"
               />
-              <button className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-bold text-lg shadow-2xl hover:shadow-purple-500/50 transform hover:scale-105 transition-all duration-300">
+              <button className="w-full sm:w-auto cd-gradient text-white px-8 py-3 rounded-lg font-bold text-lg shadow-lg shadow-indigo-600/15 transform hover:scale-105 transition-all duration-300 hover:opacity-95">
                 Secure My Spot
               </button>
             </div>
             
-            <p className="text-gray-400 text-sm mt-6">
-             ✨ 10,000+ pioneers on board
+            <p className="text-[var(--cd-muted)] text-sm mt-6">
+              10,000+ pioneers on board
             </p>
+            </div>
           </div>
         </div>
       </div>

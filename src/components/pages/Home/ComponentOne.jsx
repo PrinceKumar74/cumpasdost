@@ -1,178 +1,175 @@
-import React, { useState, useEffect } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useMotionValue,
-} from "framer-motion";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const words = [
-  "Web Design",
-  "Web Development",
-  "2D-Model",
-  "3D-Model",
-  "Strategy",
-];
+function RibbonArt() {
+  const bgGradients = [
+    { from: "#FF4FD8", to: "#7C4DFF" },
+    { from: "#7C4DFF", to: "#4DD7FF" },
+    { from: "#4DD7FF", to: "#FFB74D" },
+    { from: "#FFB74D", to: "#FF4FD8" },
+    { from: "#34D399", to: "#60A5FA" },
+    { from: "#60A5FA", to: "#A78BFA" },
+    { from: "#A78BFA", to: "#FB7185" },
+    { from: "#FB7185", to: "#FBBF24" },
+  ];
+
+  // No text/suits on cards (color-only)
+  const cards = new Array(8).fill(null);
+
+  // Playing-card-ish proportions (poker size ~ 2.5" x 3.5" => H/W ≈ 1.4)
+  const cardW = 120;
+  const cardH = 170;
+  // "Khada tash" look: a bit overlapped like a hand of cards
+  const stepX = 86; // < cardW => overlap
+  const baseY = Math.round((260 - cardH) / 2);
+  const trackW = cards.length * stepX;
+
+  const renderCard = (_c, x, y, i) => {
+    const tilt = 0; // keep cards upright (khada)
+    const bg = bgGradients[i % bgGradients.length];
+
+    return (
+      <g key={`card-${i}`} transform={`translate(${x} ${y}) rotate(${tilt} ${cardW / 2} ${cardH / 2})`}>
+        {/* card (multicolor outer) */}
+        <rect
+          x="0"
+          y="0"
+          width={cardW}
+          height={cardH}
+          rx="18"
+          fill={`url(#cd-card-bg-${i % bgGradients.length})`}
+          filter="url(#cd-cardShadow)"
+          opacity="0.98"
+        />
+
+        {/* subtle gloss */}
+        <rect x="10" y="12" width={cardW - 20} height="16" rx="10" fill="#ffffff" opacity="0.20" />
+        <rect x="10" y="34" width={cardW - 20} height="8" rx="10" fill="#ffffff" opacity="0.10" />
+      </g>
+    );
+  };
+
+  const renderCardSet = (offsetX, keyPrefix) => (
+    <g transform={`translate(${offsetX} 0)`}>
+      {cards.map((c, i) =>
+        renderCard(c, i * stepX, baseY, i)
+      )}
+    </g>
+  );
+
+  return (
+    <div className="relative mx-auto w-full max-w-5xl">
+      <div className="cd-float">
+        <svg
+          viewBox="0 0 1200 260"
+          className="w-full h-auto"
+          role="img"
+          aria-label="Decorative playing cards"
+        >
+          <defs>
+            <clipPath id="cd-clip">
+              <rect x="0" y="0" width="1200" height="260" rx="0" ry="0" />
+            </clipPath>
+
+            <filter id="cd-cardShadow" x="-20%" y="-50%" width="140%" height="200%">
+              <feDropShadow dx="0" dy="18" stdDeviation="14" floodColor="#000000" floodOpacity="0.16" />
+              <feDropShadow dx="0" dy="8" stdDeviation="8" floodColor="#000000" floodOpacity="0.10" />
+            </filter>
+
+            {bgGradients.map((g, idx) => (
+              <linearGradient key={idx} id={`cd-card-bg-${idx}`} x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor={g.from} />
+                <stop offset="100%" stopColor={g.to} />
+              </linearGradient>
+            ))}
+          </defs>
+
+          {/* looping playing cards */}
+          <g clipPath="url(#cd-clip)">
+            <g className="cd-card-marquee" style={{ "--cd-track-w": `${trackW}px` }}>
+              <g className="cd-card-track">
+                {renderCardSet(0, "a")}
+                {renderCardSet(trackW, "b")}
+              </g>
+            </g>
+          </g>
+
+          {/* ribbon removed (per request) */}
+        </svg>
+      </div>
+
+      {/* soft “card” shadow under ribbon */}
+      <div className="pointer-events-none absolute left-1/2 -bottom-6 h-10 w-[70%] -translate-x-1/2 rounded-full bg-black/10 blur-2xl" />
+    </div>
+  );
+}
 
 const ComponentOne = () => {
   const navigate = useNavigate();
-  const [index, setIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
 
-  /* ========= MOBILE DETECT ========= */
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
-
-  /* ========= TEXT ROTATION ========= */
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((p) => (p + 1) % words.length);
-    }, isMobile ? 3000 : 2000);
-    return () => clearInterval(interval);
-  }, [isMobile]);
-
-  /* ========= CURSOR GLOW ========= */
-  const cursorX = useMotionValue(-300);
-  const cursorY = useMotionValue(-300);
-
-  useEffect(() => {
-    if (isMobile) return;
-    const move = (e) => {
-      cursorX.set(e.clientX - 200);
-      cursorY.set(e.clientY - 200);
-    };
-    window.addEventListener("mousemove", move);
-    return () => window.removeEventListener("mousemove", move);
-  }, [isMobile]);
-
-  /* ========= CTA HANDLER ========= */
-  const handleCTA = () => {
-    // GA4
+  const handlePrimary = () => {
     window.trackCTA && window.trackCTA();
-
-    // Meta Pixel
     window.metaCTA && window.metaCTA();
-
-    // Navigate to Contact page
     navigate("/contact");
   };
 
   return (
-    <div className="relative min-h-screen bg-black overflow-hidden">
-
-      {/* 🌟 CURSOR GLOW */}
-      {!isMobile && (
-        <motion.div
-          style={{ x: cursorX, y: cursorY }}
-          className="pointer-events-none fixed top-0 left-0
-          w-[400px] h-[400px]
-          bg-orange-500/25
-          blur-[150px]
-          rounded-full z-10"
-        />
-      )}
-
-      {/* 🌌 STARS */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(500)].map((_, i) => (
-          <motion.span
-            key={i}
-            className="absolute rounded-full bg-white"
-            style={{
-              width: Math.random() * 2 + 1,
-              height: Math.random() * 2 + 1,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: ["-10%", "120%"],
-              opacity: [0.2, 1, 0.2],
-            }}
-            transition={{
-              duration: isMobile ? 20 : 10,
-              repeat: Infinity,
-              delay: Math.random() * 6,
-              ease: "linear",
-            }}
-          />
-        ))}
+    <section className="relative overflow-hidden bg-[#f6f6f7]">
+      {/* background glow */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-32 left-1/2 h-[420px] w-[900px] -translate-x-1/2 rounded-full bg-gradient-to-r from-fuchsia-400/20 via-indigo-400/20 to-cyan-400/20 blur-3xl" />
+        <div className="absolute -bottom-44 left-1/2 h-[420px] w-[760px] -translate-x-1/2 rounded-full bg-gradient-to-r from-orange-300/20 via-pink-300/20 to-indigo-300/20 blur-3xl" />
       </div>
 
-      {/* CONTENT */}
-      <div className="relative min-h-screen flex items-center justify-center px-4 py-16 z-20">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="relative w-full max-w-6xl rounded-3xl
-          bg-white/5 backdrop-blur-xl
-          border border-white/20
-          shadow-2xl"
-        >
-          <div className="p-6 sm:p-10 md:p-16 text-white">
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="pt-16 sm:pt-20 lg:pt-24 pb-10">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/70 px-4 py-1 text-xs font-semibold tracking-widest text-gray-700 backdrop-blur">
+              CUMPASDOST
+              <span className="h-1 w-1 rounded-full bg-gray-400" />
+              DIGITAL AGENCY
+            </p>
 
-            {/* HEADER */}
-            <div className="flex items-center space-x-3 mb-10">
-              <div className="w-8 h-8 bg-white text-black font-bold rounded-full flex items-center justify-center">
-                S
-              </div>
-              <div>
-                <h2 className="text-xl sm:text-2xl font-semibold">
-                  Campus Dost
-                </h2>
-                <p className="text-xs text-gray-400">
-                  WE MAKE BRAND VIRAL
-                </p>
-              </div>
+            <h1 className="mt-6 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+              Your team’s command
+              <span className="block">center for tasks &amp; productivity.</span>
+            </h1>
+
+            <p className="mt-5 text-base leading-relaxed text-gray-600 sm:text-lg">
+              Plan, build, and launch faster with a single partner for{" "}
+              <span className="font-semibold text-gray-900">design</span>,{" "}
+              <span className="font-semibold text-gray-900">development</span>, and{" "}
+              <span className="font-semibold text-gray-900">growth</span>.
+            </p>
+
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <button
+                type="button"
+                onClick={handlePrimary}
+                className="w-full sm:w-auto rounded-full bg-gradient-to-r from-indigo-600 to-fuchsia-600 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-600/20 hover:from-indigo-700 hover:to-fuchsia-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              >
+                Start free trial
+              </button>
+              <button
+                type="button"
+                onClick={() => navigate("/services")}
+                className="w-full sm:w-auto rounded-full border border-gray-300 bg-white/80 px-7 py-3 text-sm font-semibold text-gray-900 backdrop-blur hover:bg-white"
+              >
+                View services
+              </button>
             </div>
 
-            {/* MAIN TEXT */}
-            <div className="max-w-3xl mb-10">
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-5">
-                All Under <br />
-                One Roof{" "}
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={words[index]}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.5 }}
-                    className="block sm:inline text-orange-400"
-                  >
-                    {words[index]}
-                  </motion.span>
-                </AnimatePresence>
-              </h1>
-
-              <p className="text-base sm:text-lg md:text-xl text-gray-300">
-                Full-service digital agency for{" "}
-                <span className="font-semibold text-white">
-                  marketing, design & web development
-                </span>
-                .
-              </p>
-            </div>
-
-            {/* CTA BUTTON */}
-            <motion.button
-              onClick={handleCTA}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-orange-500 hover:bg-orange-600
-              px-8 py-3 rounded-lg font-bold shadow-xl"
-            >
-              Let’s Get Started!
-            </motion.button>
-
+            <p className="mt-4 text-xs text-gray-500">
+              No long contracts. Cancel anytime.
+            </p>
           </div>
-        </motion.div>
+
+          <div className="mt-10 sm:mt-12">
+            <RibbonArt />
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

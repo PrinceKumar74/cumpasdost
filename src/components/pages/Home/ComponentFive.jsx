@@ -93,14 +93,14 @@ function ComponentFive() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8 font-sans">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-7xl mx-auto text-center">
         {/* Section Header */}
-        <p className="text-orange-500 text-sm font-semibold uppercase tracking-wider mb-2">CHOOSE US</p>
-        <h2 className="text-4xl sm:text-5xl font-bold mb-12">
+        <p className="cd-gradient-text text-sm font-semibold uppercase tracking-wider mb-2">CHOOSE US</p>
+        <h2 className="text-4xl sm:text-5xl font-bold mb-12 text-[var(--cd-text)]">
           Why Choose Us?
         </h2>
-       <p style={{ lineHeight: 1.6 }}>
+       <p className="text-[var(--cd-muted)] max-w-5xl mx-auto" style={{ lineHeight: 1.6 }}>
         Alongside being a service provider, Cumpasdost is your committed partner for success,
         enabling you to outshine your competitors with the latest solutions. Your goals are a
         priority for us, and for that reason, we consistently evolve as a company. We are
@@ -117,7 +117,7 @@ function ComponentFive() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`p-8 rounded-xl shadow-lg flex flex-col items-start text-left ${feature.bgColor} ${feature.textColor} transform transition duration-300 hover:scale-105`}
+              className={`p-8 rounded-2xl shadow-lg flex flex-col items-start text-left ${feature.bgColor} ${feature.textColor} transform transition duration-300 hover:-translate-y-1 hover:shadow-2xl border border-black/5`}
             >
               <div className="mb-4">{feature.icon}</div>
               <h3 className="text-2xl font-semibold mb-2">{feature.title}</h3>
@@ -126,7 +126,7 @@ function ComponentFive() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

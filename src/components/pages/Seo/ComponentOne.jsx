@@ -3,7 +3,7 @@ import React from 'react';
 // SVG Icon Components
 
 const ArrowUpRightIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-[var(--cd-accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
   </svg>
 );
@@ -73,24 +73,24 @@ const CircularProgressBar = ({ percentage }) => {
 // Main Component
 export default function ComponentOne() {
   return (
-    <div className="bg-gray-900 text-white font-sans min-h-screen flex flex-col items-center justify-center p-4 lg:p-8 relative overflow-hidden">
-        {/* Background decorative dots */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-10" style={{
-            backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)',
-            backgroundSize: '20px 20px'
-        }}></div>
+    <section className="font-sans py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Background glows */}
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -top-24 left-1/2 h-[340px] w-[820px] -translate-x-1/2 rounded-full cd-gradient blur-3xl opacity-15" />
+          <div className="absolute -bottom-24 left-1/2 h-[320px] w-[720px] -translate-x-1/2 rounded-full bg-[linear-gradient(90deg,var(--cd-accent3),var(--cd-accent2))] blur-3xl opacity-10" />
+        </div>
 
         <div className="relative z-10 flex flex-col items-center text-center max-w-7xl mx-auto">
             {/* Pill */}
             <div className="mb-4">
-                <span className="bg-gray-700 text-gray-300 text-xs font-semibold px-4 py-1 rounded-full">
+                <span className="cd-surface text-[var(--cd-muted)] text-xs font-semibold px-4 py-1 rounded-full">
                     YOUR RELIABLE OUTSOURCED IT PARTNER
                 </span>
             </div>
 
             {/* Main Headline */}
             <div className="flex items-center justify-center flex-wrap">
-                 <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+                 <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-[var(--cd-text)]">
                     Drive Traffic, Boost <br className="sm:hidden"/> Sales, Grow Your Brand
                 </h1>
                 <div className="mt-[-20px] ml-2">
@@ -99,7 +99,7 @@ export default function ComponentOne() {
             </div>
 
             {/* Sub-headline */}
-            <p className="mt-4 text-lg md:text-xl text-gray-400 max-w-2xl">
+            <p className="mt-4 text-lg md:text-xl text-[var(--cd-muted)] max-w-2xl">
                 Experience unparalleled growth with comprehensive SEO and digital marketing services.
             </p>
 
@@ -164,7 +164,7 @@ export default function ComponentOne() {
                     </div>
 
                     {/* Bar Chart Card - Bottom Right */}
-                    <div className="absolute z-10 bottom-[-40px] right-0 md:right-[-20px] w-full max-w-sm bg-white text-gray-800 rounded-2xl shadow-xl p-6 transform hover:-translate-y-2 transition-transform duration-300">
+                    <div className="absolute z-10 bottom-[-40px] right-0 md:right-[-20px] w-full max-w-sm bg-white text-gray-800 rounded-2xl shadow-xl p-6 transform hover:-translate-y-2 transition-transform duration-300 border border-black/5">
                         <div className="flex justify-between items-center mb-4">
                             <div className="flex gap-2">
                                 <button className="flex items-center gap-1 text-sm bg-gray-100 px-3 py-1 rounded-md text-gray-700">Monthly <ChevronDownIcon /></button>
@@ -184,7 +184,7 @@ export default function ComponentOne() {
                 </div>
             </div>
         </div>
-    </div>
+    </section>
   );
 }
 

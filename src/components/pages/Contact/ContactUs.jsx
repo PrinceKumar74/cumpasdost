@@ -77,15 +77,13 @@ function ContactUs() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] px-4">
-
-      <div className="w-full max-w-2xl bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl p-8 animate-fadeUp">
-
-        <h2 className="text-4xl font-bold text-white text-center mb-2">
+    <div className="min-h-screen flex items-center justify-center px-4 py-10">
+      <div className="w-full max-w-2xl cd-card p-8">
+        <h2 className="text-4xl font-bold text-[var(--cd-text)] text-center mb-2">
           Get in Touch
         </h2>
-        <p className="text-gray-300 text-center mb-8">
-          Let’s build something amazing 🚀
+        <p className="text-[var(--cd-muted)] text-center mb-8">
+          Let’s build something amazing.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-5">
@@ -97,7 +95,7 @@ function ContactUs() {
               onChange={handleChange}
               placeholder="First name *"
               required
-              className="input-style"
+              className="cd-input"
             />
 
             <input
@@ -106,7 +104,7 @@ function ContactUs() {
               onChange={handleChange}
               placeholder="Last name *"
               required
-              className="input-style"
+              className="cd-input"
             />
           </div>
 
@@ -117,7 +115,7 @@ function ContactUs() {
             onChange={handleChange}
             placeholder="Email *"
             required
-            className="input-style"
+            className="cd-input"
           />
 
           <input
@@ -125,7 +123,7 @@ function ContactUs() {
             value={formData.phoneNumber}
             onChange={handleChange}
             placeholder="Phone number"
-            className="input-style"
+            className="cd-input"
           />
 
           <textarea
@@ -134,61 +132,34 @@ function ContactUs() {
             onChange={handleChange}
             placeholder="Your message *"
             required
-            className="input-style h-32 resize-none"
+            className="cd-input h-32 resize-none"
           />
 
-          <label className="flex items-center gap-2 text-sm text-gray-300">
+          <label className="flex items-center gap-2 text-sm text-[var(--cd-muted)]">
             <input
               type="checkbox"
               name="agree"
               checked={formData.agree}
               onChange={handleChange}
-              className="accent-orange-500"
+              className="accent-[var(--cd-accent)]"
             />
             I agree to the privacy policy *
           </label>
 
           <button
             disabled={isLoading}
-            className="w-full py-4 rounded-xl font-semibold text-white
-            bg-gradient-to-r from-orange-500 to-red-500
-            hover:scale-[1.02] transition-all duration-300
-            disabled:opacity-60"
+            className="w-full py-4 rounded-xl font-semibold text-white cd-gradient shadow-lg shadow-indigo-600/15 hover:opacity-95 transition-all duration-300 disabled:opacity-60"
           >
             {isLoading ? "Sending..." : "Send Message"}
           </button>
 
           {status && (
-            <p className="text-center text-sm mt-3 text-green-400">
+            <p className="text-center text-sm mt-3 text-[var(--cd-muted)]">
               {status}
             </p>
           )}
         </form>
       </div>
-
-      <style>{`
-        .input-style {
-          width: 100%;
-          padding: 14px 16px;
-          border-radius: 12px;
-          background: rgba(255,255,255,0.12);
-          color: white;
-          border: 1px solid rgba(255,255,255,0.2);
-          transition: 0.3s;
-        }
-        .input-style::placeholder { color: #d1d5db; }
-        .input-style:focus {
-          border-color: #f97316;
-          box-shadow: 0 0 0 2px rgba(249,115,22,0.4);
-        }
-        @keyframes fadeUp {
-          from { opacity: 0; transform: translateY(40px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fadeUp {
-          animation: fadeUp 0.8s ease-out;
-        }
-      `}</style>
     </div>
   );
 }

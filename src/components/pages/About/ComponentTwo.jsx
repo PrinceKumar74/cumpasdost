@@ -2,11 +2,11 @@ import React from 'react';
 
 const ComponentTwo = () => {
   return (
-    <div className="w-full py-16 px-4 bg-gray-50">
+    <section className="w-full py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header Text */}
         <div className="text-center mb-12">
-          <h2 className="text-lg md:text-xl text-gray-600 font-medium">
+          <h2 className="text-lg md:text-xl text-[var(--cd-muted)] font-medium">
             Trusted by 10,000+ companies around the world
           </h2>
         </div>
@@ -66,7 +66,7 @@ const ComponentTwo = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

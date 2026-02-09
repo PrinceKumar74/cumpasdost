@@ -8,16 +8,16 @@ import img5 from '../../../assets/marketingPics/five.png';
 
 // A reusable component for the feature cards
 const FeatureCard = ({ imgSrc, title, description }) => (
-  <div className="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+  <div className="cd-card overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
     <img 
       src={imgSrc} 
       alt={title} 
-      className="w-full h-56 object-fit-cover"
+      className="w-full h-56 object-cover"
       onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/600x400/e2e8f0/ff0000?text=Image+Error'; }}
     />
     <div className="p-6">
-      <h3 className="text-xl font-bold text-gray-800 mb-2">{title}</h3>
-      <p className="text-gray-600 text-base leading-relaxed">{description}</p>
+      <h3 className="text-xl font-bold text-[var(--cd-text)] mb-2">{title}</h3>
+      <p className="text-[var(--cd-muted)] text-base leading-relaxed">{description}</p>
     </div>
   </div>
 );
@@ -53,24 +53,24 @@ export default function ComponentTwo() {
   ];
 
   return (
-    <div className="bg-gray-800 text-white font-sans">
-      <div className="container mx-auto px-4">
+    <section className="font-sans">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* --- Hero Section --- */}
         <div className="py-20 lg:py-32 text-center">
-           <span className="inline-block bg-gray-700 text-orange-500 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-4">
+           <span className="inline-block cd-surface text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-4 cd-gradient-text">
             Our Services
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            Unlock Your <span className="text-orange-500">Brand's Full</span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-[var(--cd-text)]">
+            Unlock Your <span className="cd-gradient-text">Brand's Full</span>
             <br />
-            <span className="text-orange-500">Potential</span> with our Expertise
+            <span className="cd-gradient-text">Potential</span> with our Expertise
           </h1>
-          <p className="text-gray-400 mt-6 text-lg max-w-3xl mx-auto">
+          <p className="text-[var(--cd-muted)] mt-6 text-lg max-w-3xl mx-auto">
             We Specialize In Delivering High Quality, Scalable Digital Marketing, web Development and IT solutions. Our Innovative Strategy which Helps Your Business to Grow On Digital Platform.
           </p>
           <div className="mt-8">
-            <button className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors duration-300">
+            <button className="cd-gradient hover:opacity-95 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors duration-300 shadow-lg shadow-indigo-600/15">
               Primary Action
             </button>
           </div>
@@ -91,6 +91,6 @@ export default function ComponentTwo() {
         </div>
 
       </div>
-    </div>
+    </section>
   );
 }

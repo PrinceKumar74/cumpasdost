@@ -5,7 +5,7 @@ import ComponentSix from "./ComponentSix";
 import ComponentSeven from "./ComponentSeven";
 const Home = () => {
     return (
-        <div className="min-h-screen bg-black  " >
+        <div className="min-h-screen bg-[#f6f6f7]">
            <ComponentOne />
            <ComponentThree /> 
            <ComponentFive />

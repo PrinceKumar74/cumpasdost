@@ -42,10 +42,16 @@ export default function ComingSoon() {
   };
 
   return (
-    <div className="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 min-h-screen flex items-center justify-center">
-      <div className="bg-white/80 backdrop-blur-lg p-8 rounded-3xl shadow-lg max-w-lg w-full text-center">
-        <h1 className="text-3xl font-bold mb-4">We're Launching Soon</h1>
-        <p className="text-gray-700 mb-6">Sign up to get notified when we go live!</p>
+    <div className="min-h-screen flex items-center justify-center px-4 py-12 relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-24 left-1/2 h-[360px] w-[860px] -translate-x-1/2 rounded-full cd-gradient blur-3xl opacity-20" />
+        <div className="absolute -bottom-24 left-1/2 h-[320px] w-[720px] -translate-x-1/2 rounded-full bg-[linear-gradient(90deg,var(--cd-accent3),var(--cd-accent2))] blur-3xl opacity-10" />
+      </div>
+
+      <div className="cd-card p-8 rounded-3xl shadow-lg max-w-lg w-full text-center relative">
+        <p className="cd-gradient-text text-xs font-semibold uppercase tracking-wider mb-3">Coming soon</p>
+        <h1 className="text-3xl font-bold mb-4 text-[var(--cd-text)]">We’re Launching Soon</h1>
+        <p className="text-[var(--cd-muted)] mb-6">Sign up to get notified when we go live.</p>
 
         <div className="flex justify-center gap-4 mb-6">
           <div className="flex flex-col items-center">
@@ -72,18 +78,18 @@ export default function ComingSoon() {
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="flex-1 p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="flex-1 cd-input"
             required
           />
           <button
             type="submit"
-            className="bg-indigo-600 text-white px-5 py-3 rounded-xl hover:bg-indigo-500 transition"
+            className="cd-gradient text-white px-5 py-3 rounded-xl hover:opacity-95 transition shadow-lg shadow-indigo-600/15"
           >
             Notify Me
           </button>
         </form>
 
-        {status && <p className="mt-3 text-sm text-green-600">{status}</p>}
+        {status && <p className="mt-3 text-sm text-[var(--cd-muted)]">{status}</p>}
       </div>
     </div>
   );

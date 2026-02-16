@@ -4,124 +4,83 @@
 <head>
   <meta charset="UTF-8" />
 
-  <!-- Google Site Verification -->
-  <meta name="google-site-verification" content="BVJGKsWO5r-eUYsd812J6d8" />
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LP2903P1TR"></script>
+  <!-- SEO -->
+  <title>CumpasDost | Web Design, Development & Digital Marketing</title>
+  <meta name="description"
+    content="CumpasDost builds high-converting websites and mobile apps. Web design, development, SEO & digital marketing services. Get your quote today." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://www.cumpasdost.com" />
+  <link rel="icon" type="image/png" href="/icon.png" />
+
+  <!-- ================= GOOGLE ANALYTICS (GA4) ================= -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VP7Y71CLWW"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    // GA4 (single measurement ID)
-    gtag("config", "G-LP2903P1TR", {
+    gtag('config', 'G-VP7Y71CLWW', {
       page_path: window.location.pathname,
     });
 
-    /* GA4 EVENTS */
-    function trackCTA() {
-      gtag("event", "cta_click", {
-        event_category: "engagement",
+    /* ================= GLOBAL TRACKING FUNCTIONS ================= */
+
+    // ✅ Service View (Pricing Page)
+    window.trackServiceView = function (service) {
+      gtag("event", "view_item", {
+        currency: "INR",
+        value: service.price,
+        items: [{
+          item_id: service.id,
+          item_name: service.name,
+          price: service.price,
+          quantity: 1,
+          item_category: "services"
+        }]
       });
-    }
+    };
 
-    function trackForm() {
-      gtag("event", "form_submit", {
-        event_category: "lead",
+    // ✅ Service Click
+    window.trackServiceClick = function (service) {
+      gtag("event", "select_item", {
+        currency: "INR",
+        value: service.price,
+        items: [{
+          item_id: service.id,
+          item_name: service.name,
+          price: service.price,
+          quantity: 1
+        }]
       });
-    }
+    };
 
-    /* Scroll 50% */
-    let scrollTracked = false;
-    window.addEventListener("scroll", () => {
-      if (!scrollTracked && window.scrollY > document.body.scrollHeight * 0.5) {
-        gtag("event", "scroll_50", {
-          event_category: "engagement",
-        });
-        scrollTracked = true;
-      }
-    });
-  </script>
-  <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="/icon.png" />
+    // ✅ Form Lead (Email)
+    window.trackFormSuccess = function () {
+      gtag("event", "generate_lead", {
+        method: "email_form"
+      });
+    };
 
-  <!-- Responsive -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    // ✅ WhatsApp Lead
+    window.trackWhatsApp = function () {
+      gtag("event", "generate_lead", {
+        method: "whatsapp"
+      });
+    };
 
-  <!-- ================= SEO ================= -->
-  <title>Campus Dost | Web Design, Development & Digital Marketing</title>
-  <meta name="description"
-    content="Campus Dost is a full-service digital agency offering web design, web development, branding, SEO and digital marketing." />
-  <meta name="keywords" content="Campus Dost, Web Design, Web Development, Digital Marketing, SEO, Branding, UI UX" />
-  <meta name="author" content="Campus Dost" />
-  <link rel="canonical" href="https://campusdost.com/" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Campus Dost | We Make Brand Viral" />
-  <meta property="og:description" content="Full-service digital agency for marketing, design & web development." />
-  <meta property="og:image" content="/icon.png" />
-  <meta property="og:url" content="https://campusdost.com/" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Campus Dost | We Make Brand Viral" />
-  <meta name="twitter:description" content="Web Design, Development & Digital Marketing Agency" />
-  <meta name="twitter:image" content="/icon.png" />
-
-  <!-- ================= META PIXEL ================= -->
-  <script>
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      };
-      if (!f._fbq) f._fbq = n;
-      n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = [];
-      t = b.createElement(e); t.async = !0;
-      t.src = v;
-      s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-
-    fbq('init', 'YOUR_PIXEL_ID');
-    fbq('track', 'PageView');
-
-    function metaCTA() {
-      fbq('track', 'Lead');
-    }
   </script>
 
-  <!-- ================= MICROSOFT CLARITY ================= -->
-  <script type="text/javascript">
-    (function (c, l, a, r, i, t, y) {
-      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-      t = l.createElement(r); t.async = 1;
-      t.src = "https://www.clarity.ms/tag/YOUR_CLARITY_ID";
-      y = l.getElementsByTagName(r)[0];
-      y.parentNode.insertBefore(t, y);
-    })(window, document, "clarity", "script");
-  </script>
-
-  <!-- ================= SEO SCHEMA ================= -->
+  <!-- ================= SCHEMA ================= -->
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Campus Dost",
-      "url": "https://campusdost.com",
-      "logo": "https://campusdost.com/icon.png",
-      "sameAs": [
-        "https://www.instagram.com/campusdost",
-        "https://www.linkedin.com/company/campusdost"
-      ]
-    }
-    </script>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CumpasDost",
+    "url": "https://www.cumpasdost.com",
+    "logo": "https://www.cumpasdost.com/icon.png"
+  }
+  </script>
+
 </head>
 
 <body>

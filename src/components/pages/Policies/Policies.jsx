@@ -21,7 +21,7 @@ const Introduction =()=>(
         <a href="mailto:info@cumpasdost.com" className="cd-gradient-text hover:opacity-80">
           info@cumpasdost.com
         </a>{' '}
-        or call us at <strong>+91-9990597240</strong>.
+        or call us at <strong>+91-7479572862</strong>.
       </p>
     </section>
   </div>
@@ -56,7 +56,7 @@ const Services = () => (
         <a href="mailto:info@cumpasdost.com" className="cd-gradient-text hover:opacity-80">
           info@cumpasdost.com
         </a>{' '}
-        or call us at <strong>+91-9990597240</strong>.
+        or call us at <strong>+91-7479572862</strong>.
       </p>
     </section>
   </div>
@@ -87,7 +87,7 @@ const Responsibilities = () => (
         <a href="mailto:info@cumpasdost.com" className="cd-gradient-text hover:opacity-80">
           info@cumpasdost.com
         </a>{' '}
-        or call us at <strong>+91-9990597240</strong>.
+        or call us at <strong>+91-7479572862</strong>.
       </p>
     </section>
   </div>
@@ -110,7 +110,7 @@ const Payment = () => (
         <a href="mailto:info@cumpasdost.com" className="cd-gradient-text hover:opacity-80">
           info@cumpasdost.com
         </a>{' '}
-        or call us at <strong>+91-9990597240</strong>.
+        or call us at <strong>+91-7479572862</strong>.
       </p>
     </section>
   </div>
@@ -133,7 +133,7 @@ const Confidentiality = () => (
         <a href="mailto:info@cumpasdost.com" className="text-blue-600 hover:underline">
           info@cumpasdost.com
         </a>{' '}
-        or call us at <strong>+91-9990597240</strong>.
+        or call us at <strong>+91-7479572862</strong>.
       </p>
     </section>
   </div>
@@ -156,7 +156,7 @@ const Property = () => (
         <a href="mailto:info@cumpasdost.com" className="text-blue-600 hover:underline">
           info@cumpasdost.com
         </a>{' '}
-        or call us at <strong>+91-9990597240</strong>.
+        or call us at <strong>+91-7479572862</strong>.
       </p>
     </section>
   </div>
@@ -181,7 +181,7 @@ const Liability = () => (
         <a href="mailto:info@cumpasdost.com" className="text-blue-600 hover:underline">
           info@cumpasdost.com
         </a>{' '}
-        or call us at <strong>+91-9990597240</strong>.
+        or call us at <strong>+91-7479572862</strong>.
       </p>
     </section>
   </div>
@@ -206,7 +206,7 @@ const Termination = () => (
         <a href="mailto:info@cumpasdost.com" className="text-blue-600 hover:underline">
           info@cumpasdost.com
         </a>{' '}
-        or call us at <strong>+91-9990597240</strong>.
+        or call us at <strong>+91-7479572862</strong>.
       </p>
     </section>
   </div>
@@ -228,7 +228,7 @@ const Amendments = () => (
         <a href="mailto:info@cumpasdost.com" className="text-blue-600 hover:underline">
           info@cumpasdost.com
         </a>{' '}
-        or call us at <strong>+91-9990597240</strong>.
+        or call us at <strong>+91-7479572862</strong>.
       </p>
     </section>
   </div>
@@ -250,7 +250,7 @@ const Law = () => (
         <a href="mailto:info@cumpasdost.com" className="text-blue-600 hover:underline">
           info@cumpasdost.com
         </a>{' '}
-        or call us at <strong>+91-9990597240</strong>.
+        or call us at <strong>+91-7479572862</strong>.
       </p>
     </section>
   </div>

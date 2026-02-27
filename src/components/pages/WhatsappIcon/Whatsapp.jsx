@@ -1,9 +1,9 @@
-import { FaWhatsapp } from 'react-icons/fa' 
+import { FaWhatsapp } from 'react-icons/fa'
 // WhatsApp Floating Button Component
 const WhatsApp = () => {
   return (
     <a
-      href="https://wa.me/+917479572862"
+      href="https://wa.me/+919990597240"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"

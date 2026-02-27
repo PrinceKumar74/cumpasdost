@@ -55,7 +55,7 @@ const Footer = () => {
           <h3 className="cd-gradient-text font-semibold text-lg mb-4">CONTACT</h3>
           <div className="flex items-center text-[var(--cd-muted)] text-sm mb-2">
             <Phone className="h-4 w-4 mr-2 flex-shrink-0" />
-            <span className="break-all">+91 7479572862</span>
+            <span className="break-all">+91 9990597240</span>
           </div>
           <div className="flex items-center text-[var(--cd-muted)] text-sm mb-6">
             <Mail className="h-4 w-4 mr-2 flex-shrink-0" />

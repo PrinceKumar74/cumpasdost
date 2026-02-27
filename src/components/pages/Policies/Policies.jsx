@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
 
-const Introduction =()=>(
-    <div className="max-w-4xl mx-auto p-6 cd-card">
+const Introduction = () => (
+  <div className="max-w-4xl mx-auto p-6 cd-card">
     <h1 className="text-3xl font-bold text-[var(--cd-text)] mb-6">Privacy Policy</h1>
 
     <section className="mb-8">
       <h2 className="text-xl font-semibold text-[var(--cd-text)] mb-4">Introduction</h2>
       <p className="text-[var(--cd-muted)] leading-relaxed">
-        These Terms and Conditions ("Terms") govern the use of the website and services provided by CumpasDost. 
-        By accessing or using our website and services, you agree to comply with and be bound by these Terms. 
+        These Terms and Conditions ("Terms") govern the use of the website and services provided by CumpasDost.
+        By accessing or using our website and services, you agree to comply with and be bound by these Terms.
         If you do not agree with these Terms, please refrain from using our website and services.
       </p>
     </section>
@@ -21,7 +21,7 @@ const Introduction =()=>(
         <a href="mailto:info@cumpasdost.com" className="cd-gradient-text hover:opacity-80">
           info@cumpasdost.com
         </a>{' '}
-        or call us at <strong>+91-7479572862</strong>.
+        or call us at <strong>+91 9990597240</strong>.
       </p>
     </section>
   </div>
@@ -56,7 +56,7 @@ const Services = () => (
         <a href="mailto:info@cumpasdost.com" className="cd-gradient-text hover:opacity-80">
           info@cumpasdost.com
         </a>{' '}
-        or call us at <strong>+91-7479572862</strong>.
+        or call us at <strong>+91 9990597240</strong>.
       </p>
     </section>
   </div>
@@ -87,7 +87,7 @@ const Responsibilities = () => (
         <a href="mailto:info@cumpasdost.com" className="cd-gradient-text hover:opacity-80">
           info@cumpasdost.com
         </a>{' '}
-        or call us at <strong>+91-7479572862</strong>.
+        or call us at <strong>+91-2862</strong>.
       </p>
     </section>
   </div>
@@ -110,7 +110,7 @@ const Payment = () => (
         <a href="mailto:info@cumpasdost.com" className="cd-gradient-text hover:opacity-80">
           info@cumpasdost.com
         </a>{' '}
-        or call us at <strong>+91-7479572862</strong>.
+        or call us at <strong>+91 9990597240</strong>.
       </p>
     </section>
   </div>
@@ -133,7 +133,7 @@ const Confidentiality = () => (
         <a href="mailto:info@cumpasdost.com" className="text-blue-600 hover:underline">
           info@cumpasdost.com
         </a>{' '}
-        or call us at <strong>+91-7479572862</strong>.
+        or call us at <strong>+91 9990597240</strong>.
       </p>
     </section>
   </div>
@@ -156,7 +156,7 @@ const Property = () => (
         <a href="mailto:info@cumpasdost.com" className="text-blue-600 hover:underline">
           info@cumpasdost.com
         </a>{' '}
-        or call us at <strong>+91-7479572862</strong>.
+        or call us at <strong>+91-2862</strong>.
       </p>
     </section>
   </div>
@@ -181,7 +181,7 @@ const Liability = () => (
         <a href="mailto:info@cumpasdost.com" className="text-blue-600 hover:underline">
           info@cumpasdost.com
         </a>{' '}
-        or call us at <strong>+91-7479572862</strong>.
+        or call us at <strong>+91 9990597240</strong>.
       </p>
     </section>
   </div>
@@ -206,7 +206,7 @@ const Termination = () => (
         <a href="mailto:info@cumpasdost.com" className="text-blue-600 hover:underline">
           info@cumpasdost.com
         </a>{' '}
-        or call us at <strong>+91-7479572862</strong>.
+        or call us at <strong>+91-2862</strong>.
       </p>
     </section>
   </div>
@@ -228,7 +228,7 @@ const Amendments = () => (
         <a href="mailto:info@cumpasdost.com" className="text-blue-600 hover:underline">
           info@cumpasdost.com
         </a>{' '}
-        or call us at <strong>+91-7479572862</strong>.
+        or call us at <strong>+91 9990597240</strong>.
       </p>
     </section>
   </div>
@@ -250,7 +250,7 @@ const Law = () => (
         <a href="mailto:info@cumpasdost.com" className="text-blue-600 hover:underline">
           info@cumpasdost.com
         </a>{' '}
-        or call us at <strong>+91-7479572862</strong>.
+        or call us at <strong>+91-2862</strong>.
       </p>
     </section>
   </div>
@@ -264,65 +264,64 @@ const Law = () => (
 
 
 const PoliciesPage = () => {
-    
-    const policyTabs = [
-        { id: 'introduction', name: 'Introduction', component: <Introduction /> },
-        { id: 'services', name: 'Service Provided', component: <Services /> },
-        { id: 'responsibilities', name: 'Client Responsibility', component: <Responsibilities /> },
-        { id: 'payment', name: 'Payment Terms', component: <Payment /> },
-         { id: 'confidentiality', name: 'Confidentiality', component: <Confidentiality /> },
-        { id: 'property', name: 'Intellectual Property', component: <Property /> },
-        { id: 'liability', name: 'Limitation of Liability', component: <Liability /> },
-        { id: 'termination', name: 'Termination', component: <Termination /> },
-         { id: 'amendments', name: 'Amendments', component: <Amendments /> },
-        { id: 'law', name: 'Governing Law', component: <Law /> },
-    ];
 
-    const [activeTab, setActiveTab] = useState(policyTabs[0].id);
+  const policyTabs = [
+    { id: 'introduction', name: 'Introduction', component: <Introduction /> },
+    { id: 'services', name: 'Service Provided', component: <Services /> },
+    { id: 'responsibilities', name: 'Client Responsibility', component: <Responsibilities /> },
+    { id: 'payment', name: 'Payment Terms', component: <Payment /> },
+    { id: 'confidentiality', name: 'Confidentiality', component: <Confidentiality /> },
+    { id: 'property', name: 'Intellectual Property', component: <Property /> },
+    { id: 'liability', name: 'Limitation of Liability', component: <Liability /> },
+    { id: 'termination', name: 'Termination', component: <Termination /> },
+    { id: 'amendments', name: 'Amendments', component: <Amendments /> },
+    { id: 'law', name: 'Governing Law', component: <Law /> },
+  ];
 
-    useEffect(() => {
-        const hash = window.location.hash.substring(1);
-        if (hash && policyTabs.some(tab => tab.id === hash)) {
-            setActiveTab(hash);
-        }
-    }, []);
+  const [activeTab, setActiveTab] = useState(policyTabs[0].id);
 
-    const ActiveComponent = policyTabs.find(tab => tab.id === activeTab)?.component;
+  useEffect(() => {
+    const hash = window.location.hash.substring(1);
+    if (hash && policyTabs.some(tab => tab.id === hash)) {
+      setActiveTab(hash);
+    }
+  }, []);
 
-    return (
-        <div className="bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-                <div className="md:flex md:space-x-12">
+  const ActiveComponent = policyTabs.find(tab => tab.id === activeTab)?.component;
 
-                    <aside className="md:w-1/4 mb-8 md:mb-0">
-                        <h1 className="text-2xl font-bold text-gray-900 mb-6">Our Policies</h1>
-                        <nav className="space-y-2">
-                            {policyTabs.map((tab) => (
-                                <button
-                                    key={tab.id}
-                                    onClick={() => setActiveTab(tab.id)}
-                                    className={`w-full text-left px-4 py-2 rounded-md text-base font-medium transition-colors duration-150 ${
-                                        activeTab === tab.id
-                                            ? 'bg-orange-100 text-orange-700'
-                                            : 'text-gray-600 hover:bg-gray-100'
-                                    }`}
-                                >
-                                    {tab.name}
-                                </button>
-                            ))}
-                        </nav>
-                    </aside>
+  return (
+    <div className="bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+        <div className="md:flex md:space-x-12">
 
-                    <main className="md:w-3/4">
-                        <div className="prose max-w-none lg:prose-lg prose-headings:text-gray-800 prose-a:text-orange-600 hover:prose-a:text-orange-700">
-                           {ActiveComponent}
-                        </div>
-                    </main>
+          <aside className="md:w-1/4 mb-8 md:mb-0">
+            <h1 className="text-2xl font-bold text-gray-900 mb-6">Our Policies</h1>
+            <nav className="space-y-2">
+              {policyTabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`w-full text-left px-4 py-2 rounded-md text-base font-medium transition-colors duration-150 ${activeTab === tab.id
+                    ? 'bg-orange-100 text-orange-700'
+                    : 'text-gray-600 hover:bg-gray-100'
+                    }`}
+                >
+                  {tab.name}
+                </button>
+              ))}
+            </nav>
+          </aside>
 
-                </div>
+          <main className="md:w-3/4">
+            <div className="prose max-w-none lg:prose-lg prose-headings:text-gray-800 prose-a:text-orange-600 hover:prose-a:text-orange-700">
+              {ActiveComponent}
             </div>
+          </main>
+
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default PoliciesPage;

@@ -20,7 +20,7 @@ function ComponentThree() {
         </svg>
       ),
       title: 'Branding',
-      description: 'Egestas tellus nunc proin amet tellus tincidunt lacus consequat. Ultrices',
+      description: 'Build a strong and memorable identity that sets your business apart. We craft compelling brand stories, visuals, and strategies that connect deeply with your audience and leave a lasting impression.',
     },
     {
       icon: (
@@ -40,7 +40,7 @@ function ComponentThree() {
         </svg>
       ),
       title: 'Web development',
-      description: 'Integer ante non nunc, eget est justo vel semper nunc. Lacus',
+      description: 'Create fast, responsive, and user-friendly websites tailored to your business goals. Our development solutions ensure seamless performance, modern design, and an engaging digital experience across all devices.',
     },
     {
       icon: (
@@ -60,7 +60,7 @@ function ComponentThree() {
         </svg>
       ),
       title: 'Digital marketing',
-      description: 'Sed faucibus faucibus egestas volutpat, accumsan adipiscing egestas est. Auctor et leo urna est.',
+      description: 'Accelerate your growth with data-driven marketing strategies. From social media to content marketing, we help you reach the right audience, boost engagement, and maximize your ROI.',
     },
     {
       icon: (
@@ -80,7 +80,7 @@ function ComponentThree() {
         </svg>
       ),
       title: 'Designing',
-      description: 'Egestas tellus nunc proin amet tellus tincidunt lacus consequat. Ultrices',
+      description: 'Transform ideas into visually stunning designs. Our creative team delivers eye-catching graphics and intuitive layouts that enhance user experience and elevate your brand presence.',
     },
     {
       icon: (
@@ -100,7 +100,7 @@ function ComponentThree() {
         </svg>
       ),
       title: 'SEO',
-      description: 'Egestas tellus nunc proin amet tellus tincidunt lacus consequat. Ultrices',
+      description: 'Improve your visibility and rank higher on search engines. We use proven SEO techniques to drive organic traffic, increase credibility, and help your business stay ahead of the competition.',
     },
     {
       icon: (
@@ -120,7 +120,7 @@ function ComponentThree() {
         </svg>
       ),
       title: 'Ads Campaign',
-      description: 'Egestas tellus nunc proin amet tellus tincidunt lacus consequat. Ultrices',
+      description: 'Get measurable results with targeted advertising campaigns. We design and manage high-performing ad strategies that increase conversions, reduce costs, and grow your business effectively.',
     },
   ];
 
@@ -133,7 +133,7 @@ function ComponentThree() {
           What we offer?
         </h2>
         <p className="text-[var(--cd-muted)] text-lg mb-12 max-w-3xl mx-auto leading-relaxed">
-         At Campusdost, we provide everything your business needs to grow in the digital world. We help you build a strong brand identity that connects with your audience, and we create modern, responsive websites that look great and work smoothly. Our goal is simple — deliver quality, support your vision, and build a long-term partnership based on trust and results.
+          At Campusdost, we provide everything your business needs to grow in the digital world. We help you build a strong brand identity that connects with your audience, and we create modern, responsive websites that look great and work smoothly. Our goal is simple — deliver quality, support your vision, and build a long-term partnership based on trust and results.
         </p>
 
         {/* Services Grid */}
